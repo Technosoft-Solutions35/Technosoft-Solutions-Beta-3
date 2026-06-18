@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technosoft Solutions - Contratar Servicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    
+
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA EL FORMULARIO INTEGRADO --- */
+        .formulario-contacto {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .grupo-campo {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grupo-campo label {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #1a241f;
+            margin-bottom: 8px;
+            border-left: 3px solid #00cc52;
+            padding-left: 8px;
+        }
+
+        /* Estilo unificado para inputs, selectores y textarea con contraste para el fondo claro */
+        .grupo-campo input, 
+        .grupo-campo select, 
+        .grupo-campo textarea {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10.5pt;
+            padding: 12px;
+            border: 2px solid #b0c4b8;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #121814;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Foco interactivo con el verde de Technosoft */
+        .grupo-campo input:focus, 
+        .grupo-campo select:focus, 
+        .grupo-campo textarea:focus {
+            border-color: #00cc52;
+            box-shadow: 0 0 8px rgba(0, 254, 102, 0.2);
+        }
+
+        .grupo-campo textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Contenedor centrado para el Captcha */
+        .contenedor-captcha {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Adaptación del Botón con el Degradado Metálico Verde de la hoja de estilos */
+        .btn-enviar-formulario {
+            background: linear-gradient(180deg, #00cc52 0%, #009933 100%);
+            color: #ffffff;
+            border: 1px solid #000000;
+            padding: 14px 20px;
+            font-size: 11pt;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-enviar-formulario:hover {
+            background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+            text-shadow: 0 0 3px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="banner-superior">
+        <div class="logo">
+            <span>Technosoft</span> Solutions
+        </div>
+        <nav class="navegacion">
+            <a href="index.html" class="btn-nav">Principal</a>
+            <a href="software.html" class="btn-nav">Desarrollo de Software</a>
+            <a href="tutorias.html" class="btn-nav">Tutorías y Cursos</a>
+            <a href="sistemas.html" class="btn-nav">Sistemas Operativos</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-vista">
+        <section class="cuadro-presentacion">
+            <h1>Contratar Servicio</h1>
+            <p class="subtitulo">Completa los datos detallados a continuación para gestionar tu solicitud inmediatamente.</p>
+            <div class="linea-divisora"></div>
+            
+            
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="formulario-contacto">
+                
+                
+
+                
+                <input type="hidden" name="subject" value="Nueva Solicitud de Trabajo - Technosoft Solutions">
+                
+                <input type="hidden" name="from_name" value="Web Technosoft">
+
+                <div class="grupo-campo">
+                    <label for="servicio">Tipo de Servicio:</label>
+                    <select id="servicio" name="servicio" onchange="actualizarCategorias()" required>
+                        <option value="">-- Seleccione un Servicio Principal --</option>
+                        <option value="Desarrollo de Software">Desarrollo de Software</option>
+                        <option value="Tutorías y Cursos">Tutorías y Cursos</option>
+                        <option value="Sistemas Operativos">Sistemas Operativos</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="categoria">Categoría del Servicio:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">-- Seleccione primero un servicio principal --</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">Correo Electrónico para contactar con usted:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="detalles">Detalles de la solicitud:</label>
+                    <textarea id="detalles" name="detalles" placeholder="Escriba aquí el cuerpo del mensaje y los detalles o requerimientos que considere necesarios..." required></textarea>
+                </div>
+
+                <div class="contenedor-captcha">
+                    <div class="h-captcha" data-sitekey="064384de-6384-4dd2-8e83-f837579a4fc7"></div>
+                </div>
+
+<input type="checkbox" name="botcheck" class="campo-oculto" style="display: none;">
+
+
+                <button type="submit" class="btn-enviar-formulario">Enviar Solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Mapeo exacto de tus servicios y subcategorías
+        const mapeoServicios = {
+            "Desarrollo de Software": [
+                "Scripts personalizados y automatizacion de tareas.",
+                "Desarrollo Web para negocios y Proyectos.",
+                "Aplicaciones de Escritorio Completas (Online/Offline)"
+            ],
+            "Tutorías y Cursos": [
+                "Microsoft Excel",
+                "Microsoft Word",
+                "Microsoft PowerPoint",
+                "Microsoft Publisher",
+                "Microsoft Office Completo"
+            ],
+            "Sistemas Operativos": [
+                "Pack Básico: Instalación Esencial",
+                "Pack Intermedio: Listo para Trabajar",
+                "Pack Avanzado: Software Especializado"
+            ]
+        };
+
+        function actualizarCategorias() {
+            const servicioSeleccionado = document.getElementById("servicio").value;
+            const selectorCategoria = document.getElementById("categoria");
+            
+            // Limpiar opciones previas
+            selectorCategoria.innerHTML = '<option value="">-- Seleccione la categoría correspondiente --</option>';
+            
+            // Si hay un servicio seleccionado, renderizar sus opciones reales
+            if (servicioSeleccionado && mapeoServicios[servicioSeleccionado]) {
+                mapeoServicios[servicioSeleccionado].forEach(function(item) {
+                    const opcion = document.createElement("option");
+                    opcion.value = item;
+                    opcion.text = item;
+                    selectorCategoria.add(opcion);
+                });
+            }
+        }
+    </script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>

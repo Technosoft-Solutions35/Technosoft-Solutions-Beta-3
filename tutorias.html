@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technosoft Solutions - Tutorías y Cursos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Contenedor en lista vertical (uno debajo del otro) */
+        .lista-cursos {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        /* Estilo de la tarjeta: fondo blanco e hilera rectangular */
+        .tarjeta-curso-lista {
+            background-color: #ffffff;
+            color: #1c221e;
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* ALINEACIÓN CENTRADA PARA TODO EL CONTENIDO */
+            text-align: center;   /* Centra los textos decorativamente */
+            gap: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Doble borde solicitado para nitidez */
+            border: 2px solid #00cc52;
+            box-shadow: 0 0 0 2px #000000, 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Efecto al pasar el mouse */
+        .tarjeta-curso-lista:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 2px #000000, 0 8px 25px rgba(0, 255, 102, 0.25);
+        }
+
+        /* Encabezado de la tarjeta para el icono y título en línea */
+        .encabezado-curso {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centra el título y el icono juntos */
+            gap: 15px;
+            width: 100%;
+        }
+
+        .icono-curso-lista {
+            font-size: 24pt;
+        }
+
+        /* Título en color verde */
+        .tarjeta-curso-lista h3 {
+            font-size: 16pt;
+            font-weight: 600;
+            color: #009933; 
+            margin: 0;
+        }
+
+        /* Descripción del servicio entrenada y centrada */
+        .descripcion-curso-lista {
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #334139;
+            text-align: center; /* Cambiado a centrado para armonizar con el botón */
+            margin: 5px 0 10px 0;
+            max-width: 850px; /* Evita que el texto se estire demasiado en pantallas gigantes */
+        }
+
+        /* Botón de solicitar información (ESTILO UNIFICADO CON SOFTWARE) */
+        .btn-solicitar-lista {
+            display: inline-block !important;
+            background: linear-gradient(180deg, #00cc52 0%, #009933 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            padding: 12px 35px !important; /* Un poco más amplio para el diseño centrado */
+            font-size: 11pt !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            cursor: pointer;
+            box-shadow: 0 0 0 1px #000000, 0 4px 10px rgba(0,255,102,0.2) !important;
+            transition: all 0.3s ease !important;
+            align-self: center; /* FUERZA AL BOTÓN A IR AL CENTRO EXACTO */
+        }
+
+        /* CORREGIDO: Copia exacta del hover de software.html (Verde sólido e intenso) */
+        .btn-solicitar-lista:hover {
+            color: #ffffff !important;
+            background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%) !important;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.6) !important;
+        }
+
+        /* Estilo para el bloque del Paquete Especial en formato lista */
+        .paquete-especial-lista {
+            background-color: #ffffff;
+            color: #1c221e;
+            padding: 35px;
+            border-radius: 8px;
+            border: 3px solid #00ff66;
+            box-shadow: 0 0 0 2px #000000, 0 8px 20px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .paquete-especial-lista h2 {
+            font-size: 18pt;
+            color: #009933;
+            margin: 0;
+        }
+
+        .paquete-especial-lista p {
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #334139;
+            max-width: 850px;
+            margin: 0;
+        }
+
+        /* Botón Especial (ESTILO UNIFICADO CON SOFTWARE) */
+        .btn-especial-lista {
+            display: inline-block !important;
+            background: linear-gradient(180deg, #00cc52 0%, #009933 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            padding: 12px 45px !important; /* Un toque más ancho por ser el paquete destacado */
+            font-size: 11pt !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            cursor: pointer;
+            box-shadow: 0 0 0 1px #000000, 0 4px 10px rgba(0,255,102,0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* CORREGIDO: Copia exacta del hover de software.html para mantener simetría */
+        .btn-especial-lista:hover {
+            color: #ffffff !important;
+            background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%) !important;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.6) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="banner-superior">
+        <div class="logo">
+            <span>Technosoft</span> Solutions
+        </div>
+        <nav class="navegacion">
+            <a href="index.html" class="btn-nav">Principal</a>
+            <a href="software.html" class="btn-nav">Desarrollo de Software</a>
+            <a href="tutorias.html" class="btn-nav activo">Tutorías y Cursos</a>
+            <a href="sistemas.html" class="btn-nav">Sistemas Operativos</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-vista">
+        <section class="cuadro-presentacion">
+            <h1>Tutorías y Cursos Profesionales</h1>
+            <p class="subtitulo">Capacitación práctica en herramientas indispensables para el éxito de tu negocio.</p>
+            <div class="linea-divisora"></div>
+            
+            <div class="lista-cursos">
+                
+                <div class="tarjeta-curso-lista">
+                    <div class="encabezado-curso">
+                        <div class="icono-curso-lista">📊</div>
+                        <h3>Microsoft Excel</h3>
+                    </div>
+                    <p class="descripcion-curso-lista">Domina la gestión de datos. Aprende desde fórmulas básicas, hojas de cálculo financieras, hasta tablas dinámicas y gráficos estadísticos para optimizar la administración.</p>
+                    
+                    <a href="curso-excel.html" class="btn-solicitar-lista">Ver Plan de Estudio</a>
+                </div>
+
+                <div class="tarjeta-curso-lista">
+                    <div class="encabezado-curso">
+                        <div class="icono-curso-lista">📝</div>
+                        <h3>Microsoft Word</h3>
+                    </div>
+                    <p class="descripcion-curso-lista">Redacción técnica y profesional. Creación de contratos, informes institucionales estructurados, plantillas automatizadas y manejo avanzado de formatos para empresas.</p>
+                    
+                    <a href="curso-word.html" class="btn-solicitar-lista">Ver Plan de Estudio</a>
+                </div>
+
+                <div class="tarjeta-curso-lista">
+                    <div class="encabezado-curso">
+                        <div class="icono-curso-lista">🖥️</div>
+                        <h3>Microsoft PowerPoint</h3>
+                    </div>
+                    <p class="descripcion-curso-lista">Diseño de presentaciones de alto impacto. Desarrolla diapositivas dinámicas, transiciones profesionales y estructuras visuales efectivas para vender tus proyectos o ideas.</p>
+                    
+                    <a href="curso-powerpoint.html" class="btn-solicitar-lista">Ver Plan de Estudio</a>
+                </div>
+
+                <div class="tarjeta-curso-lista">
+                    <div class="encabezado-curso">
+                        <div class="icono-curso-lista">📰</div>
+                        <h3>Microsoft Publisher</h3>
+                    </div>
+                    <p class="descripcion-curso-lista">Diseño publicitario básico para negocios. Aprende a maquetar tus propios folletos, catálogos de productos, tarjetas de presentación y material impreso promocional.</p>
+                    
+                    <a href="curso-publisher.html" class="btn-solicitar-lista">Ver Plan de Estudio</a>
+                </div>
+
+            </div>
+
+            <div class="paquete-especial-lista">
+                <h2>📦 Paquete Master: Ofimática para Negocios</h2>
+                <p>Un curso intensivo que integra las 4 herramientas clave (Word, Excel, PowerPoint y Publisher). Diseñado específicamente para emprendedores y trabajadores que buscan digitalizar y organizar el control total de su negocio de manera eficiente.</p>
+                
+                <a href="curso-master.html" class="btn-especial-lista">Ver Plan de Estudio</a>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technosoft Solutions - Sistemas Operativos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .contenedor-bloques-verticales {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        /* Bloque Horizontal Blanco Limpio */
+        .bloque-servicio-horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #1c221e;
+            padding: 25px 35px;
+            border-radius: 8px;
+            gap: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Doble borde nítido característico de Technosoft */
+            border: 2px solid #00cc52;
+            box-shadow: 0 0 0 2px #000000, 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bloque-servicio-horizontal:hover {
+            transform: translateY(-3px);
+            border-color: #00ff66;
+            box-shadow: 0 0 0 2px #000000, 0 8px 25px rgba(0, 255, 102, 0.25);
+        }
+
+        /* Contenedor de Imagen o Icono */
+        .bloque-icono-lado {
+            font-size: 45pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+        }
+
+        /* Texto central */
+        .bloque-info-centro {
+            flex: 1;
+            text-align: left;
+        }
+
+        .bloque-info-centro h3 {
+            font-size: 15pt;
+            font-weight: 700;
+            color: #00aa44;
+            margin-bottom: 8px;
+        }
+
+        .bloque-info-centro p {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #2d3a32;
+            text-align: justify;
+            margin: 0;
+        }
+
+        /* Contenedor del Botón para forzar alineación */
+        .bloque-boton-lado {
+            min-width: 220px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Botón Verde Sólido Original */
+        .btn-solicitar-html {
+            display: inline-block !important;
+            background: linear-gradient(180deg, #00cc52 0%, #009933 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            padding: 12px 25px !important;
+            font-size: 11pt !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            width: 100% !important;
+            box-shadow: 0 0 0 1px #000000, 0 4px 10px rgba(0,255,102,0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* CORREGIDO: Ahora intensifica el verde limpiamente sin opacarse ni ponerse gris */
+        .btn-solicitar-html:hover {
+            color: #ffffff !important;
+            background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%) !important;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.6) !important;
+        }
+
+        /* =======================================================
+           Parche responsivo directo para las tarjetas del taller
+           ======================================================= */
+        @media (max-width: 768px) {
+            .bloque-servicio-horizontal {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .bloque-icono-lado {
+                font-size: 32pt;
+                min-width: auto;
+            }
+            .bloque-info-centro {
+                text-align: center;
+            }
+            .bloque-info-centro p {
+                text-align: center;
+            }
+            .bloque-boton-lado {
+                min-width: 100%;
+                width: 100%;
+            }
+            .btn-solicitar-html {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="banner-superior">
+        <div class="logo">
+            <span>Technosoft</span> Solutions
+        </div>
+        <nav class="navegacion">
+            <a href="index.html" class="btn-nav">Principal</a>
+            <a href="software.html" class="btn-nav">Desarrollo de Software</a>
+            <a href="tutorias.html" class="btn-nav">Tutorías y Cursos</a>
+            <a href="sistemas.html" class="btn-nav activo">Sistemas Operativos</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-vista">
+        <section class="cuadro-presentacion">
+            <h1>Sistemas Operativos</h1>
+            <p class="subtitulo">Configuración, auditoría y optimización de entornos de software.</p>
+            <div class="linea-divisora"></div>
+            
+            <div class="contenido-introduccion">
+                <h2>Máximo rendimiento y seguridad</h2>
+                <p>Ofrecemos diferentes paquetes estructurados de manera incremental para asegurar que tu computadora o laptop trabaje a la máxima velocidad, con total estabilidad y adaptada exactamente a lo que necesitas para tu día a día o tu profesión.</p>
+            </div>
+
+            <div class="contenedor-bloques-verticales">
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">💿</div>
+                    <div class="bloque-info-centro">
+                        <h3>Pack Básico: Instalación Esencial</h3>
+                        <p>Instalación limpia y desde cero del Sistema Operativo de tu preferencia (Windows 7, Windows 10 o Windows 11). Incluye la configuración y actualización completa de todos los controladores (drivers) esenciales del hardware para garantizar la estabilidad absoluta y el correcto encendido de tu PC o laptop.</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="pack-basico.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">🚀</div>
+                    <div class="bloque-info-centro">
+                        <h3>Pack Intermedio: Listo para Trabajar</h3>
+                        <p>Incluye absolutamente todo lo del Pack Básico + la instalación de una suite completa de aplicaciones de primera necesidad para el uso cotidiano. Dejamos tu equipo equipado con el Paquete Office completo (Word, Excel, PowerPoint), navegadores optimizados, reproductores de video, copiadores, lectores de archivos .iso y herramientas multimedia esenciales como Format Factory.</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="pack-intermedio.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">🛠️</div>
+                    <div class="bloque-info-centro">
+                        <h3>Pack Avanzado: Software Especializado</h3>
+                        <p>El plan definitivo. Incluye todo lo del Pack Básico e Intermedio + la configuración e instalación avanzada de herramientas profesionales adaptadas a tu sector. Ideal para Contabilidad (sistemas de gestión), Diseño y Edición (editores de video y gráficos), o perfiles de Estudiantes e Informáticos (entornos de desarrollo, IDEs y utilidades avanzadas).</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="pack-avanzado.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

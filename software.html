@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technosoft Solutions - Desarrollo de Software</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .contenedor-bloques-verticales {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        /* Bloque Horizontal Blanco Limpio */
+        .bloque-servicio-horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #1c221e;
+            padding: 25px 35px;
+            border-radius: 8px;
+            gap: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Doble borde nítido característico de Technosoft */
+            border: 2px solid #00cc52;
+            box-shadow: 0 0 0 2px #000000, 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bloque-servicio-horizontal:hover {
+            transform: translateY(-3px);
+            border-color: #00ff66;
+            box-shadow: 0 0 0 2px #000000, 0 8px 25px rgba(0, 255, 102, 0.25);
+        }
+
+        /* Contenedor de Imagen o Icono */
+        .bloque-icono-lado {
+            font-size: 45pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+        }
+
+        /* Texto central */
+        .bloque-info-centro {
+            flex: 1;
+            text-align: left;
+        }
+
+        .bloque-info-centro h3 {
+            font-size: 15pt;
+            font-weight: 700;
+            color: #00aa44;
+            margin-bottom: 8px;
+        }
+
+        .bloque-info-centro p {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #2d3a32;
+            text-align: justify;
+            margin: 0;
+        }
+
+        /* Contenedor del Botón para forzar alineación */
+        .bloque-boton-lado {
+            min-width: 220px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Botón Verde Sólido Original */
+        .btn-solicitar-html {
+            display: inline-block !important;
+            background: linear-gradient(180deg, #00cc52 0%, #009933 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid #000000 !important;
+            padding: 12px 25px !important;
+            font-size: 11pt !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            width: 100% !important;
+            box-shadow: 0 0 0 1px #000000, 0 4px 10px rgba(0,255,102,0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* CORREGIDO: Ahora intensifica el verde limpiamente sin opacarse ni ponerse gris */
+        .btn-solicitar-html:hover {
+            color: #ffffff !important;
+            background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%) !important;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.6) !important;
+        }
+
+        /* =======================================================
+           Parche responsivo directo para las tarjetas del taller
+           ======================================================= */
+        @media (max-width: 768px) {
+            .bloque-servicio-horizontal {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            .bloque-icono-lado {
+                font-size: 32pt;
+                min-width: auto;
+            }
+            .bloque-info-centro {
+                text-align: center;
+            }
+            .bloque-info-centro p {
+                text-align: center;
+            }
+            .bloque-boton-lado {
+                min-width: 100%;
+                width: 100%;
+            }
+            .btn-solicitar-html {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="banner-superior">
+        <div class="logo">
+            <span>Technosoft</span> Solutions
+        </div>
+        <nav class="navegacion">
+            <a href="index.html" class="btn-nav">Principal</a>
+            <a href="software.html" class="btn-nav activo">Desarrollo de Software</a>
+            <a href="tutorias.html" class="btn-nav">Tutorías y Cursos</a>
+            <a href="sistemas.html" class="btn-nav">Sistemas Operativos</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-vista">
+        <section class="cuadro-presentacion">
+            <h1>Desarrollo de Software</h1>
+            <p class="subtitulo">Automatización, scripts y programas diseñados con precisión.</p>
+            <div class="linea-divisora"></div>
+            
+            <div class="contenido-introduccion">
+                <h2>Soluciones digitales a tu medida</h2>
+                <p>Escribimos código eficiente enfocado en optimizar tus flujos de trabajo, crear herramientas robustas o dar visibilidad a tu negocio con arquitecturas tecnológicas modernas y sólidas.</p>
+            </div>
+
+            <div class="contenedor-bloques-verticales">
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">🐍</div>
+                    <div class="bloque-info-centro">
+                        <h3>Scripts Personalizados y Automatización de Tareas</h3>
+                        <p>Desarrollo de scripts sencillos e inteligentes para eliminar por completo el trabajo manual y repetitivo. Optimiza tu tiempo mediante la automatización de procesamiento de archivos, renombrado masivo, organización de datos, extracción de información web (scraping) o rutinas programadas a la medida de tus necesidades.</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="soft-automatizacion.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">🌐</div>
+                    <div class="bloque-info-centro">
+                        <h3>Desarrollo Web para Negocios y Proyectos</h3>
+                        <p>Diseño y construcción de páginas web modernas, dinámicas y completamente adaptadas a las necesidades específicas de tu negocio o emprendimiento. Creamos estructuras limpias, portafolios profesionales y sitios optimizados tanto para computadoras como para celulares, garantizando una excelente presencia digital.</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="soft-web.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+                <div class="bloque-servicio-horizontal">
+                    <div class="bloque-icono-lado">💻</div>
+                    <div class="bloque-info-centro">
+                        <h3>Aplicaciones de Escritorio Completas (100% Offline)</h3>
+                        <p>Desarrollo de programas de escritorio robustos e independientes que funcionan de manera impecable a nivel local, sin requerir ningún tipo de conexión a internet. Ideales para software de gestión interna, sistemas de control de inventario local, herramientas de cálculo avanzado o administración de bases de datos de escritorio privadas.</p>
+                    </div>
+                    <div class="bloque-boton-lado">
+                        <a href="soft-escritorio.html" class="btn-solicitar-html">Solicitar Información</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
