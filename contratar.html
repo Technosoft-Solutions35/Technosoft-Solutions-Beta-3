@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    
-
     <style>
         /* --- ESTILOS ESPECÍFICOS PARA EL FORMULARIO INTEGRADO --- */
         .formulario-contacto {
@@ -61,13 +59,6 @@
             min-height: 120px;
         }
 
-        /* Contenedor centrado para el Captcha */
-        .contenedor-captcha {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
-        }
-
         /* Adaptación del Botón con el Degradado Metálico Verde de la hoja de estilos */
         .btn-enviar-formulario {
             background: linear-gradient(180deg, #00cc52 0%, #009933 100%);
@@ -113,15 +104,10 @@
             <p class="subtitulo">Completa los datos detallados a continuación para gestionar tu solicitud inmediatamente.</p>
             <div class="linea-divisora"></div>
             
-            
-
             <form action="https://api.web3forms.com/submit" method="POST" class="formulario-contacto">
-            <input type="hidden" name="access_key" value="064384de-6384-4dd2-8e83-f837579a4fc7">   
-                
-
-                
+                <!-- Clave Web3Forms integrada -->
+                <input type="hidden" name="access_key" value="064384de-6384-4dd2-8e83-f837579a4fc7">   
                 <input type="hidden" name="subject" value="Nueva Solicitud de Trabajo - Technosoft Solutions">
-                
                 <input type="hidden" name="from_name" value="Web Technosoft">
 
                 <div class="grupo-campo">
@@ -141,9 +127,10 @@
                     </select>
                 </div>
 
+                <!-- Campo de Teléfono de 8 dígitos -->
                 <div class="grupo-campo">
-                    <label for="email">Correo Electrónico para contactar con usted:</label>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    <label for="telefono">Número de Teléfono para contactar con usted:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 52345678" pattern="[0-9]{8}" maxlength="8" title="El número debe tener exactamente 8 dígitos" required>
                 </div>
 
                 <div class="grupo-campo">
@@ -151,12 +138,8 @@
                     <textarea id="detalles" name="detalles" placeholder="Escriba aquí el cuerpo del mensaje y los detalles o requerimientos que considere necesarios..." required></textarea>
                 </div>
 
-                <div class="contenedor-captcha">
-                    <div class="h-captcha" data-sitekey="064384de-6384-4dd2-8e83-f837579a4fc7"></div>
-                </div>
-
-<input type="checkbox" name="botcheck" class="campo-oculto" style="display: none;">
-
+                <!-- Filtro anti-spam silencioso (no molesta al usuario) -->
+                <input type="checkbox" name="botcheck" style="display: none;">
 
                 <button type="submit" class="btn-enviar-formulario">Enviar Solicitud</button>
             </form>
@@ -203,6 +186,5 @@
             }
         }
     </script>
-<script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
