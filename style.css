@@ -373,7 +373,7 @@ body {
 }
 
 /* =======================================================
-   SOPORTE DE MODO OSCURO (VERSIÓN 3.0 - CON TARJETAS)
+   SOPORTE DE MODO OSCURO (VERSIÓN 4.0 - GRIS CONTRASTE)
    ======================================================= */
 @media (prefers-color-scheme: dark) {
     
@@ -413,29 +413,30 @@ body {
     }
 
     /* =======================================================
-       4. CORRECCIÓN EXCLUSIVA PARA LAS TARJETAS DE SERVICIOS
+       4. CORRECCIÓN EXCLUSIVA PARA LAS TARJETAS (GRIS CONTRASTE)
        ======================================================= */
-    /* Forzamos a que las tarjetas mantengan su metalizado oscuro original */
+    /* Le damos un fondo gris intermedio para romper el fondo y que se note la tarjeta */
     .tarjeta-curso, 
     .cuadrilla-cursos > div {
-        background: linear-gradient(135deg, #1a221d 0%, #121814 100%) !important;
-        background-color: #121814 !important;
-        border-color: #00ff66 !important; /* Borde verde brillante activo */
-        box-shadow: 0 0 15px rgba(0, 255, 102, 0.3) !important;
+        background: #252e29 !important; /* Gris medio que contrasta con el fondo oscuro y con las letras */
+        border: 2px solid #00ff66 !important; /* Borde verde brillante nítido */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+        border-radius: 6px !important;
     }
 
-    /* Forzamos a que el texto dentro de las tarjetas sea oscuro/claro correcto y no se herede el del cuadro blanco */
+    /* Textos descriptivos dentro de las tarjetas ahora en un blanco/gris muy limpio */
     .tarjeta-curso p,
     .tarjeta-curso .descripcion-curso,
     .cuadrilla-cursos > div p,
     .cuadrilla-cursos > div span {
-        color: #e2ede6 !important; /* Texto claro nítido sobre fondo negro */
+        color: #f0f5f2 !important; /* Color claro de alta definición sobre el gris de la tarjeta */
     }
 
+    /* Título de la tarjeta manteniendo el verde característico */
     .tarjeta-curso h3,
     .cuadrilla-cursos > div h3 {
-        color: #00ff66 !important; /* Título de la tarjeta en verde */
-        text-shadow: 0 0 5px rgba(0, 255, 102, 0.3) !important;
+        color: #00ff66 !important;
+        text-shadow: 0 0 5px rgba(0, 255, 102, 0.4) !important;
     }
 
     /* =======================================================
