@@ -151,6 +151,50 @@
             background: linear-gradient(180deg, #00ff66 0%, #00cc52 100%) !important;
             box-shadow: 0 0 12px rgba(0, 255, 102, 0.6) !important;
         }
+
+        /* =======================================================
+           AJUSTE EXCLUSIVO MODO OSCURO (WINDOWS / ANDROID)
+           ======================================================= */
+        @media (prefers-color-scheme: dark) {
+            .cuadro-presentacion {
+                background-color: rgba(30, 38, 34, 0.95) !important;
+                border-color: #00ff66 !important;
+                box-shadow: 0 0 15px rgba(0, 255, 102, 0.2), 0 15px 35px rgba(0, 0, 0, 0.8) !important;
+            }
+            .cuadro-presentacion h1 {
+                color: #00ff66 !important;
+                text-shadow: 0 0 8px rgba(0, 255, 102, 0.4) !important;
+            }
+            .cuadro-presentacion .subtitulo {
+                color: #c8d6cd !important;
+            }
+            /* Tarjetas de Cursos Estándar */
+            .tarjeta-curso-lista {
+                background-color: #252e29 !important;
+                border: 2px solid #00ff66 !important;
+                box-shadow: 0 0 0 2px #000000, 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+            }
+            .tarjeta-curso-lista h3 {
+                color: #00ff66 !important;
+                text-shadow: 0 0 5px rgba(0, 255, 102, 0.3) !important;
+            }
+            .descripcion-curso-lista {
+                color: #f0f5f2 !important;
+            }
+            /* Bloque Destacado de Paquete Master */
+            .paquete-especial-lista {
+                background-color: #1e2622 !important; /* Un gris un toque más profundo para denotar jerarquía */
+                border: 3px solid #00ff66 !important;
+                box-shadow: 0 0 0 2px #000000, 0 8px 20px rgba(0, 0, 0, 0.6) !important;
+            }
+            .paquete-especial-lista h2 {
+                color: #00ff66 !important;
+                text-shadow: 0 0 8px rgba(0, 255, 102, 0.4) !important;
+            }
+            .paquete-especial-lista p {
+                color: #f0f5f2 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -180,7 +224,7 @@
                         <div class="icono-curso-lista">📊</div>
                         <h3>Microsoft Excel</h3>
                     </div>
-                    <p class="descripcion-curso-lista">Domina la gestión de datos. Aprende desde fórmulas básicas, hojas de cálculo financieras, hasta tablas dinámicas y gráficos estadísticos para optimizar la administración.</p>
+                    <p class="descripcion-curso-lista">Domina la gestión de datos. Aprende desde fórmulas básicas, hojas de cálculo financieras, hasta tablas dinámicas y gráficos estadísticos para optimizar la administration.</p>
                     
                     <a href="curso-excel.html" class="btn-solicitar-lista">Ver Plan de Estudio</a>
                 </div>
